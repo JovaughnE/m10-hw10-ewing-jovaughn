@@ -6,12 +6,7 @@ const freezingTemp = 32;
 
 const boilingTemp = 212;
 
-const deg = 299;
-
-function waterTemp() {
-    let x = deg;
-
-}
+let waterTemp = deg => document.getElementById('water-temp').innerHTML = 299;
 
 //Definition of a function to decide if the temp is below or above freezing
 
@@ -33,7 +28,18 @@ function tooHot(deg) {
     }
 }
 
+setTimeout( function() {
+   document.getElementById('boiling').innerHTML = "The water is HOT, I think it is boiling";
+}, 3000);
+
 //Output constants in the corresponding span in the HTML Document.
 document.getElementById('boiling-temp').innerHTML = 212;
 document.getElementById('freezing-temp').innerHTML = 32;
-document.getElementById('water-temp').innerHTML = deg;
+document.getElementById('water-temp').innerHTML = waterTemp();
+
+//Invocation of functions
+
+coldEnough();
+
+tooHot() 
+    document.getElementById('boiling').classList.add('show');
